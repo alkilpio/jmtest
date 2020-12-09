@@ -22,6 +22,8 @@ node{
 
 }
 
+//!================================================================================================================
+
 def checkoutFromGithubToSubfolder(repositoryName, def branch = 'master', def clean = true) {
     def extensions = [[$class: 'RelativeTargetDirectory', relativeTargetDir: "${repositoryName}"],
     [$class: 'UserIdentity', name: "${GIT_REPO_OWNER}"],
@@ -36,8 +38,6 @@ def checkoutFromGithubToSubfolder(repositoryName, def branch = 'master', def cle
         extensions                           : extensions
     ])
 }
-
-//!================================================================================================================
 
 void commitBranch(branchName) {
     dir('jmtest') {
